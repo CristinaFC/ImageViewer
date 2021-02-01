@@ -1,55 +1,35 @@
 package imageviewer.apps.mock;
 
-import imageviewer.model.Image;
-import imageviewer.view.ImageDisplay;
-import imageviewer.view.ImageLoader;
-import java.util.ArrayList;
-import static java.util.Collections.list;
-import java.util.List;
+import imageviewer.apps.mock.implementations.MockImageDisplay;
+import imageviewer.apps.mock.implementations.MockImageLoader;
+import imageviewer.control.Command;
+import imageviewer.control.InitCommand;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+    
+    private static final Scanner scanner = new Scanner(System.in);
+    private final Map<String, Command> commands = new HashMap<>();
+    private final static Command NullCommand = new Command.Null();
+
+
     public static void main(String[] args) {
-        List<Image> images = new MockImageLoader().load();
-        ImageDisplay imageDisplay = new MockImageDisplay();
-        imageDisplay.display(images.get(0));
-        Scanner scanner = new Scanner(System.in);
-        int index = 0;
-        while(true){
-            imageDisplay.display(images.get(index));
-            String input = scanner.next().toUpperCase();
-            if(input.equals("N")) index = bound(index+1, images.size());
-            if(input.equals("P")) index = bound(index-1, images.size());
-            if(input.equals("Q")) break;
-            
-        }
+        new Main().execute();
     }
 
-    private static int bound(int index, int size) {
-        if (index >= size) return 0;
-        if (index < 0) return size-1;
-        return index;
+    public Main() {
+        InitCommand init = new InitCommand(new MockImageLoader().load(), new MockImageDisplay());
+        init.execute();
+        commands.putAll(init.getCommands());
     }
     
-    public static class MockImageDisplay implements ImageDisplay{
+    public void execute(){
+        while(true) commands.getOrDefault(input(), NullCommand).execute();
+    }
 
-        @Override
-        public void display(Image image) {
-            System.out.println(image.getName());
-        }
-    
-    }
-    public static class MockImageLoader implements ImageLoader{
-
-        @Override
-        public List<Image> load() {
-            List<Image> list = new ArrayList<>();
-            list.add(new Image("hola"));
-            list.add(new Image("mundo"));
-            list.add(new Image("bienvenido"));
-            return list;
-        }
-        
-    }
-    
+    private String input() {
+        return scanner.next().toUpperCase();
+    }   
 }
