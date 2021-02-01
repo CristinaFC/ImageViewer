@@ -1,4 +1,3 @@
-
 package imageviewer.control;
 
 import imageviewer.model.Image;

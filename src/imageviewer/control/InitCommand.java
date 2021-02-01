@@ -1,9 +1,5 @@
-
 package imageviewer.control;
 
-import imageviewer.apps.mock.Main;
-import imageviewer.apps.mock.implementations.MockImageDisplay;
-import imageviewer.apps.mock.implementations.MockImageLoader;
 import imageviewer.model.Image;
 import imageviewer.view.ImageDisplay;
 import java.util.HashMap;

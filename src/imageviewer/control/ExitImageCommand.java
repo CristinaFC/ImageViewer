@@ -1,4 +1,3 @@
-
 package imageviewer.control;
 
 public class ExitImageCommand implements Command{
