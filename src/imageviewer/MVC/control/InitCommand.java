@@ -1,7 +1,7 @@
-package imageviewer.control;
+package imageviewer.MVC.control;
 
-import imageviewer.model.Image;
-import imageviewer.view.ImageDisplay;
+import imageviewer.MVC.model.Image;
+import imageviewer.MVC.view.ImageDisplay;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

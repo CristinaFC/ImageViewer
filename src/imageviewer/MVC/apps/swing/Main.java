@@ -1,10 +1,10 @@
-package imageviewer.apps.swing;
+package imageviewer.MVC.apps.swing;
 
-import imageviewer.control.Command;
-import imageviewer.control.NextImageCommand;
-import imageviewer.control.PrevImageCommand;
-import imageviewer.model.Image;
-import imageviewer.view.ImageDisplay;
+import imageviewer.MVC.control.Command;
+import imageviewer.MVC.control.NextImageCommand;
+import imageviewer.MVC.control.PrevImageCommand;
+import imageviewer.MVC.model.Image;
+import imageviewer.MVC.view.ImageDisplay;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;

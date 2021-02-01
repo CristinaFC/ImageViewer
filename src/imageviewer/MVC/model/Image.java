@@ -1,4 +1,4 @@
-package imageviewer.model;
+package imageviewer.MVC.model;
 
 
 public class Image {

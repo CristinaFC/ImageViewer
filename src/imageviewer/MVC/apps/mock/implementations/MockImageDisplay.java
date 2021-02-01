@@ -1,8 +1,8 @@
 
-package imageviewer.apps.mock.implementations;
+package imageviewer.MVC.apps.mock.implementations;
 
-import imageviewer.model.Image;
-import imageviewer.view.ImageDisplay;
+import imageviewer.MVC.model.Image;
+import imageviewer.MVC.view.ImageDisplay;
 
     
 public class MockImageDisplay implements ImageDisplay{

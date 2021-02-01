@@ -1,7 +1,7 @@
-package imageviewer.apps.swing;
+package imageviewer.MVC.apps.swing;
 
-import imageviewer.model.Image;
-import imageviewer.view.ImageLoader;
+import imageviewer.MVC.model.Image;
+import imageviewer.MVC.view.ImageLoader;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;

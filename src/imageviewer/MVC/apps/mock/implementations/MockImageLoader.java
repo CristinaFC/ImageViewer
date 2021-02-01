@@ -1,8 +1,8 @@
 
-package imageviewer.apps.mock.implementations;
+package imageviewer.MVC.apps.mock.implementations;
 
-import imageviewer.model.Image;
-import imageviewer.view.ImageLoader;
+import imageviewer.MVC.model.Image;
+import imageviewer.MVC.view.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
